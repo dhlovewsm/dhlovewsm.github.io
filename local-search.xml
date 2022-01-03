@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Android与web项目交互Demo</title>
+    <link href="/2022/01/03/second_blog/"/>
+    <url>/2022/01/03/second_blog/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Android与web项目交互Demo，实现简单的登陆验证功能"><a href="#Android与web项目交互Demo，实现简单的登陆验证功能" class="headerlink" title="Android与web项目交互Demo，实现简单的登陆验证功能"></a>Android与web项目交互Demo，实现简单的登陆验证功能</h1><h2 id="1、准备工作"><a href="#1、准备工作" class="headerlink" title="1、准备工作"></a>1、准备工作</h2><blockquote><p>首先在windows平台下，数据库选择mysql，Android开发选择Android Studio，web开发选择IDEA，服务器部署在Tomcat8上。请提前将以上软件安装在电脑中。</p></blockquote><hr><h2 id="2、开发步骤"><a href="#2、开发步骤" class="headerlink" title="2、开发步骤"></a>2、开发步骤</h2><blockquote><p>本次开发着力于实现APP与web项目之间的交互，功能较为单一，只是为了验证APP与web之间的通信畅通而设计的登陆功能。</p></blockquote><h3 id="2-1、创建数据库"><a href="#2-1、创建数据库" class="headerlink" title="2.1、创建数据库"></a>2.1、创建数据库</h3><blockquote><p>进入mysql，随意创建一个database “makefriend”，并在该database中创建表格，添加数据。代码如下：</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><pre><code class="hljs java">create database makefriend;<br>use makefriend;<br><span class="hljs-function">create table <span class="hljs-title">member</span> <span class="hljs-params">( logname <span class="hljs-keyword">char</span>(<span class="hljs-number">10</span>)</span> primary key not <span class="hljs-keyword">null</span>,password <span class="hljs-title">char</span><span class="hljs-params">(<span class="hljs-number">10</span>)</span>)</span>;<br><span class="hljs-function">insert into member <span class="hljs-title">values</span><span class="hljs-params">(<span class="hljs-string">&#x27;root&#x27;</span>,<span class="hljs-string">&#x27;111111&#x27;</span>)</span></span>;<br></code></pre></td></tr></table></figure><blockquote><p>创建完成后，表结构如下图：</p></blockquote><hr><blockquote><p><img src="/pic/1.png"></p></blockquote><blockquote><p><img src="/pic/2.png"></p></blockquote><hr><blockquote><p>此时数据库创建完毕。</p></blockquote><hr><h3 id="2-2、使用IDEA搭建web项目"><a href="#2-2、使用IDEA搭建web项目" class="headerlink" title="2.2、使用IDEA搭建web项目"></a>2.2、使用IDEA搭建web项目</h3><blockquote><p>使用IDEA创建新web工程，名称为AndroidTest1，项目结构如下图：</p></blockquote><hr><blockquote><p>~<a href="/dksdskduiy.png"></a></p></blockquote>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>first blog</title>
     <link href="/2021/12/31/first_blog/"/>
     <url>/2021/12/31/first_blog/</url>
