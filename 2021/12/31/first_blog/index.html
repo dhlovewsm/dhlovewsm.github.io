@@ -19,7 +19,7 @@
     <meta name="description" content="Hexo+GitPages搭建博客遇到的坑0、前言 至于为什么要使用Hexo+GitPages的方式来搭建呢？第一是因为TMD没钱，没钱买域名和服务器，学生时代买的阿里云轻量级服务器，后来因为长期没续费搞没了；第二是因为资本压榨，本来在博客园好好的，结果flash不能用了，本来很好看、很友好的界面现在就跟拔了毛的鸡一样。鄙人迫不得已只能搞一个如此花里胡哨之活。纯属癞蛤蟆艹青蛙，长得丑玩的花！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="first blog">
-<meta property="og:url" content="http://example.com/2021/12/31/first_blog/index.html">
+<meta property="og:url" content="http://dhlovewsm.github.io/2021/12/31/first_blog/index.html">
 <meta property="og:site_name" content="Welcome to the Code World of Mine!">
 <meta property="og:description" content="Hexo+GitPages搭建博客遇到的坑0、前言 至于为什么要使用Hexo+GitPages的方式来搭建呢？第一是因为TMD没钱，没钱买域名和服务器，学生时代买的阿里云轻量级服务器，后来因为长期没续费搞没了；第二是因为资本压榨，本来在博客园好好的，结果flash不能用了，本来很好看、很友好的界面现在就跟拔了毛的鸡一样。鄙人迫不得已只能搞一个如此花里胡哨之活。纯属癞蛤蟆艹青蛙，长得丑玩的花！">
 <meta property="og:locale" content="zh_CN">
@@ -66,7 +66,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"dhlovewsm.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -251,7 +251,7 @@
 </ul>
 <hr>
 <h3 id="1-2、使用github账号登录并创建仓库"><a href="#1-2、使用github账号登录并创建仓库" class="headerlink" title="1.2、使用github账号登录并创建仓库"></a>1.2、使用github账号登录并创建仓库</h3><blockquote>
-<p>此处无坑。但需要注意的是新建的仓库名称必须是“用户名.github.io”，比如我的用户名（username）为dhlovewsm，那么我创建的仓库名称就是dhlovewsm.github.io。由于墙的原因，导致github访问时常不稳定，所以注册、登陆和新建仓库的时候需要耐心等待。创建成功后，这个仓库就可以存放自己的网站页面，你可以通过如下链接 “ <a target="_blank" rel="noopener" href="http://dhlovewsm.github.io/">http://dhlovewsm.github.io</a> ” 来访问自己的专属页面.</p>
+<p>此处无坑。但需要注意的是新建的仓库名称必须是“用户名.github.io”，比如我的用户名（username）为dhlovewsm，那么我创建的仓库名称就是dhlovewsm.github.io。由于墙的原因，导致github访问时常不稳定，所以注册、登陆和新建仓库的时候需要耐心等待。创建成功后，这个仓库就可以存放自己的网站页面，你可以通过如下链接 “ <a href="http://dhlovewsm.github.io/">http://dhlovewsm.github.io</a> ” 来访问自己的专属页面.</p>
 </blockquote>
 <hr>
 <h3 id="1-3、配置SSH-key"><a href="#1-3、配置SSH-key" class="headerlink" title="1.3、配置SSH key"></a>1.3、配置SSH key</h3><blockquote>
@@ -308,7 +308,7 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>此时输入<code>hexo d</code>就会将代码提交至github。需要注意的是，由于墙的原因，github连接非常不稳定，你的个人主页 <a target="_blank" rel="noopener" href="http://dhlovewsm.github.io/">http://dhlovewsm.github.io</a> 中经常会出现资源更新不及时的情况，因此你需要耐心等待。</p>
+<p>此时输入<code>hexo d</code>就会将代码提交至github。需要注意的是，由于墙的原因，github连接非常不稳定，你的个人主页 <a href="http://dhlovewsm.github.io/">http://dhlovewsm.github.io</a> 中经常会出现资源更新不及时的情况，因此你需要耐心等待。</p>
 </blockquote>
 <blockquote>
 <p>至此，第一部分讲解完毕。</p>
