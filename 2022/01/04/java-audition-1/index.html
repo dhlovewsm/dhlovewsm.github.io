@@ -16,15 +16,15 @@
   <meta name="author" content="董浩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java面试笔试之基础知识">
+    <meta name="description" content="Java面试笔试之基础知识-11、基本概念1.1、Java语言的优点 纯面向对象（Everything is object，万物皆对象） 平台无关性（一次编译，到处运行） 内置类库（简化程序设计，缩短开发时间） 对web应用开发的支持（Support to Web） 较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等） 去除了C++中的难点（头文件、指针、结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java_audition-1">
 <meta property="og:url" content="http://dhlovewsm.github.io/2022/01/04/java-audition-1/index.html">
 <meta property="og:site_name" content="Welcome to the Code World of Mine!">
-<meta property="og:description" content="Java面试笔试之基础知识">
+<meta property="og:description" content="Java面试笔试之基础知识-11、基本概念1.1、Java语言的优点 纯面向对象（Everything is object，万物皆对象） 平台无关性（一次编译，到处运行） 内置类库（简化程序设计，缩短开发时间） 对web应用开发的支持（Support to Web） 较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等） 去除了C++中的难点（头文件、指针、结构">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-04T03:20:48.000Z">
-<meta property="article:modified_time" content="2022-01-04T03:24:37.521Z">
+<meta property="article:modified_time" content="2022-01-04T05:04:11.390Z">
 <meta property="article:author" content="董浩">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -196,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      13 字
+      1.7k 字
     </span>
   
 
@@ -205,7 +205,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      15 分钟
     </span>
   
 
@@ -237,7 +237,67 @@
             <h1 style="display: none">java_audition-1</h1>
             
             <div class="markdown-body">
-              <h1 id="Java面试笔试之基础知识"><a href="#Java面试笔试之基础知识" class="headerlink" title="Java面试笔试之基础知识"></a>Java面试笔试之基础知识</h1>
+              <h1 id="Java面试笔试之基础知识-1"><a href="#Java面试笔试之基础知识-1" class="headerlink" title="Java面试笔试之基础知识-1"></a>Java面试笔试之基础知识-1</h1><h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><h3 id="1-1、Java语言的优点"><a href="#1-1、Java语言的优点" class="headerlink" title="1.1、Java语言的优点"></a>1.1、Java语言的优点</h3><ul>
+<li>纯面向对象（Everything is object，万物皆对象）</li>
+<li>平台无关性（一次编译，到处运行）</li>
+<li>内置类库（简化程序设计，缩短开发时间）</li>
+<li>对web应用开发的支持（Support to Web）</li>
+<li>较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等）</li>
+<li>去除了C++中的难点（头文件、指针、结构、单元、运算符重载）</li>
+</ul>
+<hr>
+<h3 id="1-2、Java与C-C-的区别"><a href="#1-2、Java与C-C-的区别" class="headerlink" title="1.2、Java与C/C++的区别"></a>1.2、Java与C/C++的区别</h3><ul>
+<li>Java为解释型语言，即源代码—&gt;Java编译器编译为字节码—&gt;JVM解释执行。C/C++为编译型语言，执行速度快，但不能够跨平台，而Java执行速度慢，却可以跨平台执行。</li>
+<li>Java中除基本类型外，所有类型都是类（纯面向对象），不存在全局变量或全局函数。而C语言是面向过程，C++兼具面向对象和面向过程的特点。</li>
+<li>Java中没有指针，更加安全。</li>
+<li>Java不支持多重继承，但可以实现多个接口来实现类似效果。</li>
+<li>Java提供了垃圾回收器实现垃圾的自动回收，而C++需要把释放资源的代码放到析构函数中。</li>
+<li>Java具有平台无关性，对数据类型分配固定长度，不因平台的差异而产生差异。而C++同一个数据类型在不同平台上的长度不同。</li>
+<li>Java提供了注释文档的内建支持。</li>
+<li>Java包含了一些标准库。如JDBC库。</li>
+</ul>
+<hr>
+<h3 id="1-3、public-static-void-main（String-args-方法"><a href="#1-3、public-static-void-main（String-args-方法" class="headerlink" title="1.3、public static void main（String[] args)方法"></a>1.3、public static void main（String[] args)方法</h3><blockquote>
+<p>这个方法是Java程序的入口方法。其中：</p>
+</blockquote>
+<ul>
+<li>public和static没有先后顺序关系。</li>
+<li>可以把main()方法定义为final。</li>
+<li>可以用synchronized来修饰main()方法。</li>
+<li>不能用abstract来修饰main()方法。</li>
+</ul>
+<blockquote>
+<p>不管哪种定义方式，都必须保证main()方法的返回值为void，并有static和public关键字修饰。那么一个.java文件中能否有多个main()方法？<br>答案是肯定的。但是只有与文件名同名的用public修饰的类中的main()方法才能作为整个程序的入口方法。如下例，Test.java文件：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">T</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;T main&quot;</span>);<br>        &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br><span class="hljs-comment">//程序入口函数</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;Test main&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr>
+<h3 id="1-4、程序的初始化顺序"><a href="#1-4、程序的初始化顺序" class="headerlink" title="1.4、程序的初始化顺序"></a>1.4、程序的初始化顺序</h3><h4 id="1-4-1、初始化的原则"><a href="#1-4-1、初始化的原则" class="headerlink" title="1.4.1、初始化的原则"></a>1.4.1、初始化的原则</h4><blockquote>
+<p>Java程序的初始化一般遵循3个原则（优先级递减）：</p>
+</blockquote>
+<ul>
+<li>静态对象（变量）优先于非静态对象（变量）。</li>
+<li>父类优先于子类。</li>
+<li>按照成员变量的定义顺序进行初始化。、</li>
+</ul>
+<hr>
+<h4 id="1-4-2、初始化的顺序"><a href="#1-4-2、初始化的顺序" class="headerlink" title="1.4.2、初始化的顺序"></a>1.4.2、初始化的顺序</h4><blockquote>
+<p>Java程序初始化工作可以在许多不同共同的代码块中完成，执行的顺序如下：</p>
+</blockquote>
+<blockquote>
+<p><strong>父类静态变量—&gt;父类静态代码块—&gt;子类静态变量—&gt;子类静态代码块—&gt;父类非静态变量—&gt;父类非静态代码块—&gt;父类构造函数—&gt;子类非静态变量—&gt;子类非静态代码块—&gt;子类构造函数</strong></p>
+</blockquote>
+<hr>
+<h3 id="1-5、Java中的作用域"><a href="#1-5、Java中的作用域" class="headerlink" title="1.5、Java中的作用域"></a>1.5、Java中的作用域</h3><blockquote>
+<p>在Java语言中，作用域是由花括号{}的位置决定的，决定了其定义的变量名的可见性与生命周期。</p>
+</blockquote>
+<blockquote>
+<p>Java中，变量的类型有3中：成员变量、静态变量、和局部变量。其中，成员变量的作用范围与类的实例化对象的作用范围相同；静态变量不依赖于特定的实例，被所有实例所共享，即只要类被加载，JVM就会给它的静态变量分配空间；而局部变量的作用域是它所在的花括号内。</p>
+</blockquote>
+<blockquote>
+<p>此外，成员变量有4种作用域，见下表：</p>
+</blockquote>
+<p>|作用域与可见性|当前类|同一package|子类|其他package|<br>|:-:|:-:|:-:|:-:|:-:|:-:|<br>|public|√|√|√|√|<br>|priavte|√|×|×|×|<br>|protected|√|√|√|×|<br>|default|√|√|×|×|</p>
+
             </div>
             <hr>
             <div>
@@ -262,7 +322,7 @@
                     
                     
                       <a href="/2022/01/03/android-test/">
-                        <span class="hidden-mobile">android-test</span>
+                        <span class="hidden-mobile">android_test</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
