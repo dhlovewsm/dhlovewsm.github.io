@@ -16,20 +16,20 @@
   <meta name="author" content="董浩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java面试笔试之基础知识-11、基本概念1.1、Java语言的优点 纯面向对象（Everything is object，万物皆对象） 平台无关性（一次编译，到处运行） 内置类库（简化程序设计，缩短开发时间） 对web应用开发的支持（Support to Web） 较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等） 去除了C++中的难点（头文件、指针、结构">
+    <meta name="description" content="Java面试笔试之基础知识-11、基本概念（上）1.1、Java语言的优点 纯面向对象（Everything is object，万物皆对象） 平台无关性（一次编译，到处运行） 内置类库（简化程序设计，缩短开发时间） 对web应用开发的支持（Support to Web） 较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等） 去除了C++中的难点（头文件、指针">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java_audition-1">
+<meta property="og:title" content="Java面试笔试之基础知识-1">
 <meta property="og:url" content="http://dhlovewsm.github.io/2022/01/04/java-audition-1/index.html">
 <meta property="og:site_name" content="Welcome to the Code World of Mine!">
-<meta property="og:description" content="Java面试笔试之基础知识-11、基本概念1.1、Java语言的优点 纯面向对象（Everything is object，万物皆对象） 平台无关性（一次编译，到处运行） 内置类库（简化程序设计，缩短开发时间） 对web应用开发的支持（Support to Web） 较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等） 去除了C++中的难点（头文件、指针、结构">
+<meta property="og:description" content="Java面试笔试之基础知识-11、基本概念（上）1.1、Java语言的优点 纯面向对象（Everything is object，万物皆对象） 平台无关性（一次编译，到处运行） 内置类库（简化程序设计，缩短开发时间） 对web应用开发的支持（Support to Web） 较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等） 去除了C++中的难点（头文件、指针">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-04T03:20:48.000Z">
-<meta property="article:modified_time" content="2022-01-04T05:04:11.390Z">
+<meta property="article:modified_time" content="2022-01-04T05:33:17.130Z">
 <meta property="article:author" content="董浩">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>java_audition-1 - Welcome to the Code World of Mine!</title>
+  <title>Java面试笔试之基础知识-1 - Welcome to the Code World of Mine!</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="java_audition-1">
+            <span class="h2" id="subtitle" title="Java面试笔试之基础知识-1">
               
             </span>
 
@@ -196,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k 字
+      2k 字
     </span>
   
 
@@ -205,7 +205,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15 分钟
+      17 分钟
     </span>
   
 
@@ -234,10 +234,10 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">java_audition-1</h1>
+            <h1 style="display: none">Java面试笔试之基础知识-1</h1>
             
             <div class="markdown-body">
-              <h1 id="Java面试笔试之基础知识-1"><a href="#Java面试笔试之基础知识-1" class="headerlink" title="Java面试笔试之基础知识-1"></a>Java面试笔试之基础知识-1</h1><h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><h3 id="1-1、Java语言的优点"><a href="#1-1、Java语言的优点" class="headerlink" title="1.1、Java语言的优点"></a>1.1、Java语言的优点</h3><ul>
+              <h1 id="Java面试笔试之基础知识-1"><a href="#Java面试笔试之基础知识-1" class="headerlink" title="Java面试笔试之基础知识-1"></a>Java面试笔试之基础知识-1</h1><h2 id="1、基本概念（上）"><a href="#1、基本概念（上）" class="headerlink" title="1、基本概念（上）"></a>1、基本概念（上）</h2><h3 id="1-1、Java语言的优点"><a href="#1-1、Java语言的优点" class="headerlink" title="1.1、Java语言的优点"></a>1.1、Java语言的优点</h3><ul>
 <li>纯面向对象（Everything is object，万物皆对象）</li>
 <li>平台无关性（一次编译，到处运行）</li>
 <li>内置类库（简化程序设计，缩短开发时间）</li>
@@ -294,9 +294,68 @@
 <p>Java中，变量的类型有3中：成员变量、静态变量、和局部变量。其中，成员变量的作用范围与类的实例化对象的作用范围相同；静态变量不依赖于特定的实例，被所有实例所共享，即只要类被加载，JVM就会给它的静态变量分配空间；而局部变量的作用域是它所在的花括号内。</p>
 </blockquote>
 <blockquote>
-<p>此外，成员变量有4种作用域，见下表：</p>
+<p>此外，成员变量有4种作用域，其各自权限见下表：</p>
 </blockquote>
-<p>|作用域与可见性|当前类|同一package|子类|其他package|<br>|:-:|:-:|:-:|:-:|:-:|:-:|<br>|public|√|√|√|√|<br>|priavte|√|×|×|×|<br>|protected|√|√|√|×|<br>|default|√|√|×|×|</p>
+<table>
+<thead>
+<tr>
+<th align="center">作用域与可见性</th>
+<th align="center">当前类</th>
+<th align="center">同一package</th>
+<th align="center">子类</th>
+<th align="center">其他package</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">public</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="center">priavte</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td align="center">protected</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td align="center">default</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>需要注意的是，这些修饰符只能修饰成员变量，不能修饰局部变量。private和protected不能修饰外部类，但可以修饰内部类，外部类只能用public、final或abstract修饰。</p>
+</blockquote>
+<hr>
+<h3 id="1-6、构造函数的特点"><a href="#1-6、构造函数的特点" class="headerlink" title="1.6、构造函数的特点"></a>1.6、构造函数的特点</h3><blockquote>
+<p>在Java中，构造函数具有以下特点：</p>
+</blockquote>
+<ul>
+<li>构造函数必须与类的名字相同，且不能有返回值（或void）。</li>
+<li>一个类可以有多个构造函数。</li>
+<li>构造函数可以有0、1或多个参数。</li>
+<li>构造函数总伴着new操作一起调用，且是由系统调用，只运行一次。</li>
+<li>主要用于完成对象的初始化工作。</li>
+<li>构造函数不能被继承，因此也不能被覆盖，但是可以被重载。</li>
+<li>子类可以通过super关键字显示调用父类的构造函数。当父类中没有无参数的构造函数时，子类必须显示调用父类的构造函数。</li>
+<li>当父类和子类都没有定义构造函数时，系统会为父类和子类都生成一个默认的无参数的构造函数。</li>
+</ul>
+<hr>
+<blockquote>
+<p>后续更新ing…</p>
+</blockquote>
 
             </div>
             <hr>
@@ -317,12 +376,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2022/01/04/java-audition-2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java面试笔试之基础知识-2</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
                       <a href="/2022/01/03/android-test/">
-                        <span class="hidden-mobile">android_test</span>
+                        <span class="hidden-mobile">Android与Web项目交互Demo示例</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
