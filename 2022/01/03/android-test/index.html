@@ -20,7 +20,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android与Web项目交互Demo示例">
 <meta property="og:url" content="http://dhlovewsm.github.io/2022/01/03/android-test/index.html">
-<meta property="og:site_name" content="Welcome to the Code World of Mine!">
+<meta property="og:site_name">
 <meta property="og:description" content="Android与web项目交互Demo，实现简单的登陆验证功能1、准备工作 首先在windows平台下，数据库选择mysql，Android开发选择Android Studio，web开发选择IDEA，服务器部署在Tomcat8上。请提前将以上软件安装在电脑中。   2、开发步骤 本次开发采用http通信方式，着力于实现APP与web项目之间的交互，功能较为单一，只是为了验证APP与web之间的通">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://dhlovewsm.github.io/2022/01/03/android-test/1.jpg">
@@ -29,14 +29,16 @@
 <meta property="og:image" content="http://dhlovewsm.github.io/2022/01/03/android-test/4.jpg">
 <meta property="og:image" content="http://dhlovewsm.github.io/2022/01/03/android-test/5.jpg">
 <meta property="og:image" content="http://dhlovewsm.github.io/2022/01/03/android-test/6.jpg">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/03/android-test/8.jpg">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/03/android-test/7.jpg">
 <meta property="article:published_time" content="2022-01-03T06:41:02.000Z">
-<meta property="article:modified_time" content="2022-01-04T05:35:21.940Z">
+<meta property="article:modified_time" content="2022-01-05T01:56:39.043Z">
 <meta property="article:author" content="董浩">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://dhlovewsm.github.io/2022/01/03/android-test/1.jpg">
   
   
-  <title>Android与Web项目交互Demo示例 - Welcome to the Code World of Mine!</title>
+  <title>Android与Web项目交互Demo示例 - </title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -85,7 +87,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>董浩</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -203,7 +205,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      5k 字
+      5.1k 字
     </span>
   
 
@@ -212,7 +214,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      42 分钟
+      43 分钟
     </span>
   
 
@@ -295,7 +297,13 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs java">    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>&#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>&#123;<br>        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);<br>        setContentView(R.layout.main);<br>        <span class="hljs-keyword">final</span> EditText logname = (EditText) findViewById(R.id.logname);<br>        <span class="hljs-keyword">final</span> EditText password = (EditText) findViewById(R.id.password);<br>        Button login = (Button) findViewById(R.id.login);<br>        login.setOnClickListener(<span class="hljs-keyword">new</span> View.OnClickListener() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View view)</span> </span>&#123;<br>                <span class="hljs-keyword">final</span> String name = logname.getText().toString().trim();<br>                <span class="hljs-keyword">final</span> String psw = password.getText().toString().trim();<br>                <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable() &#123;<br>                    <span class="hljs-meta">@Override</span><br>                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;<br>                        String path=<span class="hljs-string">&quot;http://192.168.0.106:5024/mustLogin?logname=&quot;</span>+name+<span class="hljs-string">&quot;&amp;password=&quot;</span>+psw;<br>                        <span class="hljs-keyword">try</span> &#123;<br>                            <span class="hljs-keyword">try</span>&#123;<br>                                URL url = <span class="hljs-keyword">new</span> URL(path); <span class="hljs-comment">//新建url并实例化</span><br>                                HttpURLConnection connection = (HttpURLConnection) url.openConnection();<br>                                connection.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);<span class="hljs-comment">//获取服务器数据</span><br>                                connection.setReadTimeout(<span class="hljs-number">8000</span>);<span class="hljs-comment">//设置读取超时的毫秒数</span><br>                                connection.setConnectTimeout(<span class="hljs-number">8000</span>);<span class="hljs-comment">//设置连接超时的毫秒数</span><br>                                InputStream in = connection.getInputStream();<br>                                BufferedReader reader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(in));<br>                                String result = reader.readLine();<span class="hljs-comment">//读取服务器进行逻辑处理后页面显示的数据</span><br>                                Log.d(<span class="hljs-string">&quot;MainActivity&quot;</span>,<span class="hljs-string">&quot;run: &quot;</span>+result);<br>                                <span class="hljs-keyword">if</span> (result.equals(<span class="hljs-string">&quot;login successfully!&quot;</span>))&#123;<br>                                    Log.d(<span class="hljs-string">&quot;MainActivity&quot;</span>,<span class="hljs-string">&quot;run2: &quot;</span>+result);<br>                                    Looper.prepare();<br>                                    Log.d(<span class="hljs-string">&quot;MainActivity&quot;</span>,<span class="hljs-string">&quot;run3: &quot;</span>+result);<br>                                    Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>,<span class="hljs-string">&quot;You logined successfully!&quot;</span>,Toast.LENGTH_SHORT).show();<br>                                    Log.d(<span class="hljs-string">&quot;MainActivity&quot;</span>,<span class="hljs-string">&quot;run4: &quot;</span>+result);<br>                                    Looper.loop();<br>                                &#125;<br>                            &#125;<span class="hljs-keyword">catch</span> (MalformedURLException e)&#123;&#125;<br>                        &#125; <span class="hljs-keyword">catch</span> (   IOException e) &#123;<br>                            e.printStackTrace();<br>                        &#125;<br>                    &#125;<br>                &#125;).start();<br>            &#125;<br>        &#125;);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>此时，Android端代码已经开发完成，接下来就是启动安装即可。需要注意的是，使用Android Studio运行项目时，应使用手机数据线，并打开开发者选项使用USB调试功能，USB选项选择MIDI选项，如果使用模拟器的话，还需要另行设置网络ip，在此并不赘述。</p>
+<p>此时，Android端代码已经开发完成，接下来就是启动安装即可。需要注意的是，使用Android Studio运行项目时，应使用手机数据线，并打开开发者选项使用USB调试功能，USB选项选择MIDI选项，如果使用模拟器的话，还需要另行设置网络ip，在此并不赘述。此时，APP界面我们输入正确的账号密码并点击登陆后，会提示登陆成功。如下图：</p>
+</blockquote>
+<blockquote>
+<p><img src="/2022/01/03/android-test/8.jpg" srcset="/img/loading.gif" lazyload></p>
+</blockquote>
+<blockquote>
+<p><img src="/2022/01/03/android-test/7.jpg" srcset="/img/loading.gif" lazyload></p>
 </blockquote>
 <blockquote>
 <p>该项目完整代码已上传至github。<a target="_blank" rel="noopener" href="https://github.com/dhlovewsm/AndroidDemo">https://github.com/dhlovewsm/AndroidDemo</a> </p>
