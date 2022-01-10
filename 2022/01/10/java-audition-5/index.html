@@ -16,21 +16,24 @@
   <meta name="author" content="董浩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java面试笔试之基础知识-11、基本概念（上）1.1、Java语言的优点 纯面向对象（Everything is object，万物皆对象） 平台无关性（一次编译，到处运行） 内置类库（简化程序设计，缩短开发时间） 对web应用开发的支持（Support to Web） 较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等） 去除了C++中的难点（头文件、指针">
+    <meta name="description" content="Java面试笔试之基础知识-53、关键字（下）3.6、switch语句 switch语句用于多分支选择，在使用switch（expr）时，expr只能是一个枚举常量（内部也是由整型或字符类型实现）或一个整数表达式。byte、short和char类型都可以隐式的转为int类型，因此都可以作为switch的表达式，但是long、float、double和String类型不能隐式的转为int类型，因此不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java面试笔试之基础知识-1">
-<meta property="og:url" content="http://dhlovewsm.github.io/2022/01/04/java-audition-1/index.html">
+<meta property="og:title" content="Java面试笔试之基础知识-5">
+<meta property="og:url" content="http://dhlovewsm.github.io/2022/01/10/java-audition-5/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="Java面试笔试之基础知识-11、基本概念（上）1.1、Java语言的优点 纯面向对象（Everything is object，万物皆对象） 平台无关性（一次编译，到处运行） 内置类库（简化程序设计，缩短开发时间） 对web应用开发的支持（Support to Web） 较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等） 去除了C++中的难点（头文件、指针">
+<meta property="og:description" content="Java面试笔试之基础知识-53、关键字（下）3.6、switch语句 switch语句用于多分支选择，在使用switch（expr）时，expr只能是一个枚举常量（内部也是由整型或字符类型实现）或一个整数表达式。byte、short和char类型都可以隐式的转为int类型，因此都可以作为switch的表达式，但是long、float、double和String类型不能隐式的转为int类型，因此不">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-04T03:20:48.000Z">
-<meta property="article:modified_time" content="2022-01-07T02:01:14.164Z">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/10/java-audition-5/1.jpg">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/10/java-audition-5/2.jpg">
+<meta property="article:published_time" content="2022-01-10T03:12:17.000Z">
+<meta property="article:modified_time" content="2022-01-10T05:02:53.066Z">
 <meta property="article:author" content="董浩">
 <meta property="article:tag" content="Java面试笔试">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://dhlovewsm.github.io/2022/01/10/java-audition-5/1.jpg">
   
   
-  <title>Java面试笔试之基础知识-1 - </title>
+  <title>Java面试笔试之基础知识-5 - </title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +179,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Java面试笔试之基础知识-1">
+            <span class="h2" id="subtitle" title="Java面试笔试之基础知识-5">
               
             </span>
 
@@ -186,8 +189,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-04 11:20" pubdate>
-        2022年1月4日 上午
+      <time datetime="2022-01-10 11:12" pubdate>
+        2022年1月10日 上午
       </time>
     </span>
   
@@ -197,7 +200,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2k 字
+      1.9k 字
     </span>
   
 
@@ -206,7 +209,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      17 分钟
+      16 分钟
     </span>
   
 
@@ -235,128 +238,41 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java面试笔试之基础知识-1</h1>
+            <h1 style="display: none">Java面试笔试之基础知识-5</h1>
             
             <div class="markdown-body">
-              <h1 id="Java面试笔试之基础知识-1"><a href="#Java面试笔试之基础知识-1" class="headerlink" title="Java面试笔试之基础知识-1"></a>Java面试笔试之基础知识-1</h1><h2 id="1、基本概念（上）"><a href="#1、基本概念（上）" class="headerlink" title="1、基本概念（上）"></a>1、基本概念（上）</h2><h3 id="1-1、Java语言的优点"><a href="#1-1、Java语言的优点" class="headerlink" title="1.1、Java语言的优点"></a>1.1、Java语言的优点</h3><ul>
-<li>纯面向对象（Everything is object，万物皆对象）</li>
-<li>平台无关性（一次编译，到处运行）</li>
-<li>内置类库（简化程序设计，缩短开发时间）</li>
-<li>对web应用开发的支持（Support to Web）</li>
-<li>较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等）</li>
-<li>去除了C++中的难点（头文件、指针、结构、单元、运算符重载）</li>
-</ul>
-<hr>
-<h3 id="1-2、Java与C-C-的区别"><a href="#1-2、Java与C-C-的区别" class="headerlink" title="1.2、Java与C/C++的区别"></a>1.2、Java与C/C++的区别</h3><ul>
-<li>Java为解释型语言，即源代码—&gt;Java编译器编译为字节码—&gt;JVM解释执行。C/C++为编译型语言，执行速度快，但不能够跨平台，而Java执行速度慢，却可以跨平台执行。</li>
-<li>Java中除基本类型外，所有类型都是类（纯面向对象），不存在全局变量或全局函数。而C语言是面向过程，C++兼具面向对象和面向过程的特点。</li>
-<li>Java中没有指针，更加安全。</li>
-<li>Java不支持多重继承，但可以实现多个接口来实现类似效果。</li>
-<li>Java提供了垃圾回收器实现垃圾的自动回收，而C++需要把释放资源的代码放到析构函数中。</li>
-<li>Java具有平台无关性，对数据类型分配固定长度，不因平台的差异而产生差异。而C++同一个数据类型在不同平台上的长度不同。</li>
-<li>Java提供了注释文档的内建支持。</li>
-<li>Java包含了一些标准库。如JDBC库。</li>
-</ul>
-<hr>
-<h3 id="1-3、public-static-void-main（String-args-方法"><a href="#1-3、public-static-void-main（String-args-方法" class="headerlink" title="1.3、public static void main（String[] args)方法"></a>1.3、public static void main（String[] args)方法</h3><blockquote>
-<p>这个方法是Java程序的入口方法。其中：</p>
+              <h1 id="Java面试笔试之基础知识-5"><a href="#Java面试笔试之基础知识-5" class="headerlink" title="Java面试笔试之基础知识-5"></a>Java面试笔试之基础知识-5</h1><h2 id="3、关键字（下）"><a href="#3、关键字（下）" class="headerlink" title="3、关键字（下）"></a>3、关键字（下）</h2><h3 id="3-6、switch语句"><a href="#3-6、switch语句" class="headerlink" title="3.6、switch语句"></a>3.6、switch语句</h3><blockquote>
+<p>switch语句用于多分支选择，在使用switch（expr）时，expr只能是一个枚举常量（内部也是由整型或字符类型实现）或一个整数表达式。byte、short和char类型都可以隐式的转为int类型，因此都可以作为switch的表达式，但是long、float、double和String类型不能隐式的转为int类型，因此不能作为switch的表达式，如果必须要使用的话，必须对其进行强制转换。另外，case语句之后可以是直接的常量数值，也可以是常量计算式，还可以是final型的变量（必须是编译时变量）。<br>在Java7之后，switch开始支持String类型了。示例代码如下：</p>
 </blockquote>
-<ul>
-<li>public和static没有先后顺序关系。</li>
-<li>可以把main()方法定义为final。</li>
-<li>可以用synchronized来修饰main()方法。</li>
-<li>不能用abstract来修饰main()方法。</li>
-</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(String str)</span></span>&#123;<br>        <span class="hljs-keyword">switch</span> (str)&#123;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;java&quot;</span>:<br>                System.out.println(<span class="hljs-string">&quot;java&quot;</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;android&quot;</span>:<br>                System.out.println(<span class="hljs-string">&quot;android&quot;</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;linux&quot;</span>:<br>                System.out.println(<span class="hljs-string">&quot;linux&quot;</span>);<br>                <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">default</span>:<br>                    System.out.println(<span class="hljs-string">&quot;default&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>不管哪种定义方式，都必须保证main()方法的返回值为void，并有static和public关键字修饰。那么一个.java文件中能否有多个main()方法？<br>答案是肯定的。但是只有与文件名同名的用public修饰的类中的main()方法才能作为整个程序的入口方法。如下例，Test.java文件：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">T</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;T main&quot;</span>);<br>        &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br><span class="hljs-comment">//程序入口函数</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;Test main&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<hr>
-<h3 id="1-4、程序的初始化顺序"><a href="#1-4、程序的初始化顺序" class="headerlink" title="1.4、程序的初始化顺序"></a>1.4、程序的初始化顺序</h3><h4 id="1-4-1、初始化的原则"><a href="#1-4-1、初始化的原则" class="headerlink" title="1.4.1、初始化的原则"></a>1.4.1、初始化的原则</h4><blockquote>
-<p>Java程序的初始化一般遵循3个原则（优先级递减）：</p>
-</blockquote>
-<ul>
-<li>静态对象（变量）优先于非静态对象（变量）。</li>
-<li>父类优先于子类。</li>
-<li>按照成员变量的定义顺序进行初始化。、</li>
-</ul>
-<hr>
-<h4 id="1-4-2、初始化的顺序"><a href="#1-4-2、初始化的顺序" class="headerlink" title="1.4.2、初始化的顺序"></a>1.4.2、初始化的顺序</h4><blockquote>
-<p>Java程序初始化工作可以在许多不同共同的代码块中完成，执行的顺序如下：</p>
-</blockquote>
-<blockquote>
-<p><strong>父类静态变量—&gt;父类静态代码块—&gt;子类静态变量—&gt;子类静态代码块—&gt;父类非静态变量—&gt;父类非静态代码块—&gt;父类构造函数—&gt;子类非静态变量—&gt;子类非静态代码块—&gt;子类构造函数</strong></p>
+<p>需要注意的是：一般必须在case语句结尾添加break语句，否则匹配的case值后的所有情况都会被执行。</p>
 </blockquote>
 <hr>
-<h3 id="1-5、Java中的作用域"><a href="#1-5、Java中的作用域" class="headerlink" title="1.5、Java中的作用域"></a>1.5、Java中的作用域</h3><blockquote>
-<p>在Java语言中，作用域是由花括号{}的位置决定的，决定了其定义的变量名的可见性与生命周期。</p>
+<h3 id="3-7、volatile的作用"><a href="#3-7、volatile的作用" class="headerlink" title="3.7、volatile的作用"></a>3.7、volatile的作用</h3><blockquote>
+<p>volatile是一个类型修饰符，用来修饰被不同线程访问和修改的变量。被volatile定义的变量，系统每次用到都是从对应的内存中提取，而不是缓存。使用volatile修饰成员变量后，所有线程在任何时候看到的值都是相同的。示例代码如下：</p>
 </blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyThread</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runnable</span></span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">volatile</span> Boolean flag;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;<br>        flag = <span class="hljs-keyword">false</span>;<br>    &#125;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">while</span> (flag)<br>            <span class="hljs-comment">//do something</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>Java中，变量的类型有3中：成员变量、静态变量、和局部变量。其中，成员变量的作用范围与类的实例化对象的作用范围相同；静态变量不依赖于特定的实例，被所有实例所共享，即只要类被加载，JVM就会给它的静态变量分配空间；而局部变量的作用域是它所在的花括号内。</p>
-</blockquote>
-<blockquote>
-<p>此外，成员变量有4种作用域，其各自权限见下表：</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">作用域与可见性</th>
-<th align="center">当前类</th>
-<th align="center">同一package</th>
-<th align="center">子类</th>
-<th align="center">其他package</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">public</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">√</td>
-</tr>
-<tr>
-<td align="center">priavte</td>
-<td align="center">√</td>
-<td align="center">×</td>
-<td align="center">×</td>
-<td align="center">×</td>
-</tr>
-<tr>
-<td align="center">protected</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">×</td>
-</tr>
-<tr>
-<td align="center">default</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">×</td>
-<td align="center">×</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>需要注意的是，这些修饰符只能修饰成员变量，不能修饰局部变量。private和protected不能修饰外部类，但可以修饰内部类，外部类只能用public、final或abstract修饰。</p>
+<p>这是用来停止线程最常用的一种方法。一般情况下，volatile不能代替sychronized，能不使用volatile就不使用volatile。</p>
 </blockquote>
 <hr>
-<h3 id="1-6、构造函数的特点"><a href="#1-6、构造函数的特点" class="headerlink" title="1.6、构造函数的特点"></a>1.6、构造函数的特点</h3><blockquote>
-<p>在Java中，构造函数具有以下特点：</p>
+<h3 id="3-8、instanceof的作用"><a href="#3-8、instanceof的作用" class="headerlink" title="3.8、instanceof的作用"></a>3.8、instanceof的作用</h3><blockquote>
+<p>instanceof的作用是判断一个引用类型的变量所指向的对象是否是一个类（接口、抽象类、父类）的实例。即它左边的对象是否是它右边的类的实例。示例代码如下：</p>
 </blockquote>
-<ul>
-<li>构造函数必须与类的名字相同，且不能有返回值（或void）。</li>
-<li>一个类可以有多个构造函数。</li>
-<li>构造函数可以有0、1或多个参数。</li>
-<li>构造函数总伴着new操作一起调用，且是由系统调用，只运行一次。</li>
-<li>主要用于完成对象的初始化工作。</li>
-<li>构造函数不能被继承，因此也不能被覆盖，但是可以被重载。</li>
-<li>子类可以通过super关键字显示调用父类的构造函数。当父类中没有无参数的构造函数时，子类必须显示调用父类的构造函数。</li>
-<li>当父类和子类都没有定义构造函数时，系统会为父类和子类都生成一个默认的无参数的构造函数。</li>
-</ul>
-<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        String s = <span class="hljs-string">&quot;Hello&quot;</span>;<br>        <span class="hljs-keyword">int</span>[] a =&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>&#125;;<br>        <span class="hljs-keyword">if</span> (s <span class="hljs-keyword">instanceof</span> String)<br>            System.out.println(<span class="hljs-string">&quot;true&quot;</span>);<br>        <span class="hljs-keyword">if</span> (s <span class="hljs-keyword">instanceof</span> Object)<br>            System.out.println(<span class="hljs-string">&quot;true&quot;</span>);<br>        <span class="hljs-keyword">if</span> (a <span class="hljs-keyword">instanceof</span> <span class="hljs-keyword">int</span>[])<br>            System.out.println(<span class="hljs-string">&quot;true&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>后续更新ing…</p>
+<p>运行结果如下：<br><img src="/2022/01/10/java-audition-5/1.jpg" srcset="/img/loading.gif" lazyload></p>
 </blockquote>
+<hr>
+<h3 id="3-9、strictfp的作用"><a href="#3-9、strictfp的作用" class="headerlink" title="3.9、strictfp的作用"></a>3.9、strictfp的作用</h3><blockquote>
+<p>strictfp是strict float point的缩写，精确浮点。用来确保浮点数运算的准确性，当一个类被strictfp修饰时，所有方法都会自动被strictfp修饰。保证在不同的硬件平台上有一致的运行结果。示例代码如下：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">strictfp</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testStrictfp</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">float</span> f = <span class="hljs-number">0.12365f</span>;<br>        <span class="hljs-keyword">double</span> d = <span class="hljs-number">0.03496421d</span>;<br>        <span class="hljs-keyword">double</span> sum = f+d;<br>        System.out.println(sum);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        testStrictfp();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果如下：<br><img src="/2022/01/10/java-audition-5/2.jpg" srcset="/img/loading.gif" lazyload></p>
+</blockquote>
+<hr>
 
             </div>
             <hr>
@@ -391,9 +307,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/04/java-audition-2/">
+                      <a href="/2022/01/10/java-audition-6/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Java面试笔试之基础知识-2</span>
+                        <span class="hidden-mobile">Java面试笔试之基础知识-6</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -401,8 +317,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/03/android-test/">
-                        <span class="hidden-mobile">Android与Web项目交互Demo示例</span>
+                      <a href="/2022/01/08/java-audition-4/">
+                        <span class="hidden-mobile">Java面试笔试之基础知识-4</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

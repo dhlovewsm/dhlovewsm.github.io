@@ -16,21 +16,21 @@
   <meta name="author" content="董浩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java面试笔试之基础知识-11、基本概念（上）1.1、Java语言的优点 纯面向对象（Everything is object，万物皆对象） 平台无关性（一次编译，到处运行） 内置类库（简化程序设计，缩短开发时间） 对web应用开发的支持（Support to Web） 较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等） 去除了C++中的难点（头文件、指针">
+    <meta name="description" content="Java面试笔试之基础知识-64、基本类型与运算（上）4.1、基本数据类型 Java中一共有8种原始数据类型（byte、short、int、long、float、double、char、boolean），在声明后会立刻在栈上被分配内存空间。除此之外，其他类型都是引用类型，在声明时不会被分配内存空间，只是存储了一个内存地址（类似于指针）。基本数据类型对比如下表：     数据类型 字节长度 范围 默">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java面试笔试之基础知识-1">
-<meta property="og:url" content="http://dhlovewsm.github.io/2022/01/04/java-audition-1/index.html">
+<meta property="og:title" content="Java面试笔试之基础知识-6">
+<meta property="og:url" content="http://dhlovewsm.github.io/2022/01/10/java-audition-6/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="Java面试笔试之基础知识-11、基本概念（上）1.1、Java语言的优点 纯面向对象（Everything is object，万物皆对象） 平台无关性（一次编译，到处运行） 内置类库（简化程序设计，缩短开发时间） 对web应用开发的支持（Support to Web） 较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等） 去除了C++中的难点（头文件、指针">
+<meta property="og:description" content="Java面试笔试之基础知识-64、基本类型与运算（上）4.1、基本数据类型 Java中一共有8种原始数据类型（byte、short、int、long、float、double、char、boolean），在声明后会立刻在栈上被分配内存空间。除此之外，其他类型都是引用类型，在声明时不会被分配内存空间，只是存储了一个内存地址（类似于指针）。基本数据类型对比如下表：     数据类型 字节长度 范围 默">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-04T03:20:48.000Z">
-<meta property="article:modified_time" content="2022-01-07T02:01:14.164Z">
+<meta property="article:published_time" content="2022-01-10T05:03:40.000Z">
+<meta property="article:modified_time" content="2022-01-10T11:04:49.494Z">
 <meta property="article:author" content="董浩">
 <meta property="article:tag" content="Java面试笔试">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>Java面试笔试之基础知识-1 - </title>
+  <title>Java面试笔试之基础知识-6 - </title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +176,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Java面试笔试之基础知识-1">
+            <span class="h2" id="subtitle" title="Java面试笔试之基础知识-6">
               
             </span>
 
@@ -186,8 +186,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-04 11:20" pubdate>
-        2022年1月4日 上午
+      <time datetime="2022-01-10 13:03" pubdate>
+        2022年1月10日 下午
       </time>
     </span>
   
@@ -197,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2k 字
+      1k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      17 分钟
+      9 分钟
     </span>
   
 
@@ -235,128 +235,120 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java面试笔试之基础知识-1</h1>
+            <h1 style="display: none">Java面试笔试之基础知识-6</h1>
             
             <div class="markdown-body">
-              <h1 id="Java面试笔试之基础知识-1"><a href="#Java面试笔试之基础知识-1" class="headerlink" title="Java面试笔试之基础知识-1"></a>Java面试笔试之基础知识-1</h1><h2 id="1、基本概念（上）"><a href="#1、基本概念（上）" class="headerlink" title="1、基本概念（上）"></a>1、基本概念（上）</h2><h3 id="1-1、Java语言的优点"><a href="#1-1、Java语言的优点" class="headerlink" title="1.1、Java语言的优点"></a>1.1、Java语言的优点</h3><ul>
-<li>纯面向对象（Everything is object，万物皆对象）</li>
-<li>平台无关性（一次编译，到处运行）</li>
-<li>内置类库（简化程序设计，缩短开发时间）</li>
-<li>对web应用开发的支持（Support to Web）</li>
-<li>较好的安全性和健壮性（提供了数组边界检测、字节码校验、强类型机制、垃圾回收器、异常处理等）</li>
-<li>去除了C++中的难点（头文件、指针、结构、单元、运算符重载）</li>
-</ul>
-<hr>
-<h3 id="1-2、Java与C-C-的区别"><a href="#1-2、Java与C-C-的区别" class="headerlink" title="1.2、Java与C/C++的区别"></a>1.2、Java与C/C++的区别</h3><ul>
-<li>Java为解释型语言，即源代码—&gt;Java编译器编译为字节码—&gt;JVM解释执行。C/C++为编译型语言，执行速度快，但不能够跨平台，而Java执行速度慢，却可以跨平台执行。</li>
-<li>Java中除基本类型外，所有类型都是类（纯面向对象），不存在全局变量或全局函数。而C语言是面向过程，C++兼具面向对象和面向过程的特点。</li>
-<li>Java中没有指针，更加安全。</li>
-<li>Java不支持多重继承，但可以实现多个接口来实现类似效果。</li>
-<li>Java提供了垃圾回收器实现垃圾的自动回收，而C++需要把释放资源的代码放到析构函数中。</li>
-<li>Java具有平台无关性，对数据类型分配固定长度，不因平台的差异而产生差异。而C++同一个数据类型在不同平台上的长度不同。</li>
-<li>Java提供了注释文档的内建支持。</li>
-<li>Java包含了一些标准库。如JDBC库。</li>
-</ul>
-<hr>
-<h3 id="1-3、public-static-void-main（String-args-方法"><a href="#1-3、public-static-void-main（String-args-方法" class="headerlink" title="1.3、public static void main（String[] args)方法"></a>1.3、public static void main（String[] args)方法</h3><blockquote>
-<p>这个方法是Java程序的入口方法。其中：</p>
-</blockquote>
-<ul>
-<li>public和static没有先后顺序关系。</li>
-<li>可以把main()方法定义为final。</li>
-<li>可以用synchronized来修饰main()方法。</li>
-<li>不能用abstract来修饰main()方法。</li>
-</ul>
-<blockquote>
-<p>不管哪种定义方式，都必须保证main()方法的返回值为void，并有static和public关键字修饰。那么一个.java文件中能否有多个main()方法？<br>答案是肯定的。但是只有与文件名同名的用public修饰的类中的main()方法才能作为整个程序的入口方法。如下例，Test.java文件：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">T</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;T main&quot;</span>);<br>        &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br><span class="hljs-comment">//程序入口函数</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;Test main&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<hr>
-<h3 id="1-4、程序的初始化顺序"><a href="#1-4、程序的初始化顺序" class="headerlink" title="1.4、程序的初始化顺序"></a>1.4、程序的初始化顺序</h3><h4 id="1-4-1、初始化的原则"><a href="#1-4-1、初始化的原则" class="headerlink" title="1.4.1、初始化的原则"></a>1.4.1、初始化的原则</h4><blockquote>
-<p>Java程序的初始化一般遵循3个原则（优先级递减）：</p>
-</blockquote>
-<ul>
-<li>静态对象（变量）优先于非静态对象（变量）。</li>
-<li>父类优先于子类。</li>
-<li>按照成员变量的定义顺序进行初始化。、</li>
-</ul>
-<hr>
-<h4 id="1-4-2、初始化的顺序"><a href="#1-4-2、初始化的顺序" class="headerlink" title="1.4.2、初始化的顺序"></a>1.4.2、初始化的顺序</h4><blockquote>
-<p>Java程序初始化工作可以在许多不同共同的代码块中完成，执行的顺序如下：</p>
-</blockquote>
-<blockquote>
-<p><strong>父类静态变量—&gt;父类静态代码块—&gt;子类静态变量—&gt;子类静态代码块—&gt;父类非静态变量—&gt;父类非静态代码块—&gt;父类构造函数—&gt;子类非静态变量—&gt;子类非静态代码块—&gt;子类构造函数</strong></p>
-</blockquote>
-<hr>
-<h3 id="1-5、Java中的作用域"><a href="#1-5、Java中的作用域" class="headerlink" title="1.5、Java中的作用域"></a>1.5、Java中的作用域</h3><blockquote>
-<p>在Java语言中，作用域是由花括号{}的位置决定的，决定了其定义的变量名的可见性与生命周期。</p>
-</blockquote>
-<blockquote>
-<p>Java中，变量的类型有3中：成员变量、静态变量、和局部变量。其中，成员变量的作用范围与类的实例化对象的作用范围相同；静态变量不依赖于特定的实例，被所有实例所共享，即只要类被加载，JVM就会给它的静态变量分配空间；而局部变量的作用域是它所在的花括号内。</p>
-</blockquote>
-<blockquote>
-<p>此外，成员变量有4种作用域，其各自权限见下表：</p>
+              <h1 id="Java面试笔试之基础知识-6"><a href="#Java面试笔试之基础知识-6" class="headerlink" title="Java面试笔试之基础知识-6"></a>Java面试笔试之基础知识-6</h1><h2 id="4、基本类型与运算（上）"><a href="#4、基本类型与运算（上）" class="headerlink" title="4、基本类型与运算（上）"></a>4、基本类型与运算（上）</h2><h3 id="4-1、基本数据类型"><a href="#4-1、基本数据类型" class="headerlink" title="4.1、基本数据类型"></a>4.1、基本数据类型</h3><blockquote>
+<p>Java中一共有8种原始数据类型（byte、short、int、long、float、double、char、boolean），在声明后会立刻在栈上被分配内存空间。除此之外，其他类型都是引用类型，在声明时不会被分配内存空间，只是存储了一个内存地址（类似于指针）。基本数据类型对比如下表：</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th align="center">作用域与可见性</th>
-<th align="center">当前类</th>
-<th align="center">同一package</th>
-<th align="center">子类</th>
-<th align="center">其他package</th>
+<th align="center">数据类型</th>
+<th align="center">字节长度</th>
+<th align="center">范围</th>
+<th align="center">默认值</th>
+<th align="center">包装类</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">public</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">√</td>
+<td align="center">int</td>
+<td align="center">4</td>
+<td align="center">[-2<sup>31</sup>,2<sup>31</sup>-1]</td>
+<td align="center">0</td>
+<td align="center">Integer</td>
 </tr>
 <tr>
-<td align="center">priavte</td>
-<td align="center">√</td>
-<td align="center">×</td>
-<td align="center">×</td>
-<td align="center">×</td>
+<td align="center">short</td>
+<td align="center">2</td>
+<td align="center">[-32768,32767]</td>
+<td align="center">0</td>
+<td align="center">Short</td>
 </tr>
 <tr>
-<td align="center">protected</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">×</td>
+<td align="center">long</td>
+<td align="center">8</td>
+<td align="center">[-2<sup>63</sup>,2<sup>63</sup>-1]</td>
+<td align="center">0L或0l</td>
+<td align="center">Long</td>
 </tr>
 <tr>
-<td align="center">default</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">×</td>
-<td align="center">×</td>
+<td align="center">byte</td>
+<td align="center">1</td>
+<td align="center">[-128,127]</td>
+<td align="center">0</td>
+<td align="center">Byte</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">4</td>
+<td align="center">32位IEEE754单精度范围</td>
+<td align="center">0.0F或0.0f</td>
+<td align="center">Float</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">8</td>
+<td align="center">64位IEEE754双精度范围</td>
+<td align="center">0.0</td>
+<td align="center">Double</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">2</td>
+<td align="center">Unicode [0,65535]</td>
+<td align="center">u0000</td>
+<td align="center">Character</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">1</td>
+<td align="center">true和false</td>
+<td align="center">false</td>
+<td align="center">Boolean</td>
 </tr>
 </tbody></table>
 <blockquote>
-<p>需要注意的是，这些修饰符只能修饰成员变量，不能修饰局部变量。private和protected不能修饰外部类，但可以修饰内部类，外部类只能用public、final或abstract修饰。</p>
+<p>封装类型与原始类型有许多不同点：首先原始数据类型在传递参数时都是按值传递，而封装类型都是按引用传递；其次，当封装类型和原始类型用作某个类的实例数据时，它们所指定的默认值不同，对象引用实例变量的默认值为null，而原始类型实例变量与它们的类型有关。<br>除此以外，Java中，默认声明的小数是double类型的，直接写的整型数字是int类型的。因此在对float类型的变量进行初始化时需要进行类型转换。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">float</span> f = <span class="hljs-number">1.0f</span>;<span class="hljs-comment">//第一种初始化方法</span><br><span class="hljs-keyword">float</span> f = (<span class="hljs-keyword">float</span>)<span class="hljs-number">1.0</span>;<span class="hljs-comment">//第二种初始化方法</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>引申：Jav中的null值是什么？在内存中null又是什么？<br>null仅仅表明该引用目前没有指向任何对象，即将引用变量的值全部置0。<code>String x = null</code>表示定义了一个变量x，x中存放的是String引用，此处为null。</p>
 </blockquote>
 <hr>
-<h3 id="1-6、构造函数的特点"><a href="#1-6、构造函数的特点" class="headerlink" title="1.6、构造函数的特点"></a>1.6、构造函数的特点</h3><blockquote>
-<p>在Java中，构造函数具有以下特点：</p>
+<h3 id="4-2、不可变类"><a href="#4-2、不可变类" class="headerlink" title="4.2、不可变类"></a>4.2、不可变类</h3><blockquote>
+<p>不可变类是指当创建了这个类的实例后，就不允许修改它的值了。即只允许别的程序读，不允许别的程序修改。创建不可变类的原则：</p>
 </blockquote>
 <ul>
-<li>构造函数必须与类的名字相同，且不能有返回值（或void）。</li>
-<li>一个类可以有多个构造函数。</li>
-<li>构造函数可以有0、1或多个参数。</li>
-<li>构造函数总伴着new操作一起调用，且是由系统调用，只运行一次。</li>
-<li>主要用于完成对象的初始化工作。</li>
-<li>构造函数不能被继承，因此也不能被覆盖，但是可以被重载。</li>
-<li>子类可以通过super关键字显示调用父类的构造函数。当父类中没有无参数的构造函数时，子类必须显示调用父类的构造函数。</li>
-<li>当父类和子类都没有定义构造函数时，系统会为父类和子类都生成一个默认的无参数的构造函数。</li>
+<li>类中所有成员变量被private修饰；</li>
+<li>类中没有写或者修改成员变量的方法，只提供了构造函数；</li>
+<li>确保类中所有方法不会被子类覆盖；</li>
+<li>如果一个类成员不是不可变量，那么在成员初始化或者使用get方法获取时，需要通过clone方法确保类的不可变性；</li>
+<li>如果有必要，可以使用覆盖Object类的equals()方法和hashCode()方法。</li>
 </ul>
-<hr>
 <blockquote>
-<p>后续更新ing…</p>
+<p>创建不可变类的示例代码如下：</p>
 </blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
             <hr>
@@ -391,18 +383,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/04/java-audition-2/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Java面试笔试之基础知识-2</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/03/android-test/">
-                        <span class="hidden-mobile">Android与Web项目交互Demo示例</span>
+                      <a href="/2022/01/10/java-audition-5/">
+                        <span class="hidden-mobile">Java面试笔试之基础知识-5</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
