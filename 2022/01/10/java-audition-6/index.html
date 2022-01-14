@@ -23,11 +23,16 @@
 <meta property="og:site_name">
 <meta property="og:description" content="Java面试笔试之基础知识-64、基本类型与运算（上）4.1、基本数据类型 Java中一共有8种原始数据类型（byte、short、int、long、float、double、char、boolean），在声明后会立刻在栈上被分配内存空间。除此之外，其他类型都是引用类型，在声明时不会被分配内存空间，只是存储了一个内存地址（类似于指针）。基本数据类型对比如下表：     数据类型 字节长度 范围 默">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/10/java-audition-6/1.jpg">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/10/java-audition-6/2.jpg">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/10/java-audition-6/3.jpg">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/10/java-audition-6/4.jpg">
 <meta property="article:published_time" content="2022-01-10T05:03:40.000Z">
-<meta property="article:modified_time" content="2022-01-10T11:04:49.494Z">
+<meta property="article:modified_time" content="2022-01-12T03:41:40.982Z">
 <meta property="article:author" content="董浩">
 <meta property="article:tag" content="Java面试笔试">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://dhlovewsm.github.io/2022/01/10/java-audition-6/1.jpg">
   
   
   <title>Java面试笔试之基础知识-6 - </title>
@@ -197,7 +202,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1k 字
+      3.7k 字
     </span>
   
 
@@ -206,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9 分钟
+      31 分钟
     </span>
   
 
@@ -329,26 +334,111 @@
 <blockquote>
 <p>创建不可变类的示例代码如下：</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><br></code></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Date;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ImmutableClass</span></span>&#123;<br>    <span class="hljs-keyword">private</span> Date date;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ImmutableClass</span><span class="hljs-params">(Date date)</span></span>&#123;<br>        <span class="hljs-keyword">this</span>.date = date;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printState</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(date);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Date <span class="hljs-title">getDate</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> (Date) date.clone();<br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        Date date = <span class="hljs-keyword">new</span> Date();<br>        ImmutableClass immutC = <span class="hljs-keyword">new</span> ImmutableClass(date);<br>        immutC.printState();<br>        date.setMonth(<span class="hljs-number">5</span>);<br>        immutC.printState();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果如下：<br><img src="/2022/01/10/java-audition-6/1.jpg" srcset="/img/loading.gif" lazyload><br>Java中之所以设计很多不可变类，主要是不可变类具有使用简单、线程安全、节省内存等优点。但是不可变类的对象会因为值的不同而产生新的对象，因此不能滥用。</p>
+</blockquote>
+<hr>
+<h3 id="4-3、值传递和引用传递"><a href="#4-3、值传递和引用传递" class="headerlink" title="4.3、值传递和引用传递"></a>4.3、值传递和引用传递</h3><blockquote>
+<p>Java提供了两种参数传递的方式：值传递和引用传递。</p>
+</blockquote>
+<ul>
+<li>值传递：在方法调用中，实参会把它的值传递给形参，形参只是用实参的值初始化一个临时的存储单元，因此形参与实参虽然有着相同的值，但是存储单元不同，因此对形参的改变不会影响实参的值。</li>
+<li>引用传递：在方法调用中，传递的是对象（对象的地址），这是形参和实参的对象指向同一块存储单元，因此对形参的修改就会影响实参的值。</li>
+</ul>
+<blockquote>
+<p>在Java中，原始数据类型在传递参数时都是按值传递，而包装类型在传递参数时是按引用传递的。以以下代码举例：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testPassParameter</span><span class="hljs-params">(StringBuffer stringBuffer,<span class="hljs-keyword">int</span> n)</span></span>&#123;<br>        stringBuffer.append(<span class="hljs-string">&quot;World&quot;</span>);<br>        n = <span class="hljs-number">8</span>;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;<br>        StringBuffer stringBuffer = <span class="hljs-keyword">new</span> StringBuffer(<span class="hljs-string">&quot;Hello&quot;</span>);<br>        testPassParameter(stringBuffer,i);<br>        System.out.println(stringBuffer);<br>        System.out.println(i);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果为：<br><img src="/2022/01/10/java-audition-6/2.jpg" srcset="/img/loading.gif" lazyload><br>Java中处理8种基本数据类型用的是值传递，其他所有类型都用的是引用传递。而这8种基本类型的包装类都是不可变量，因此增加了“按引用传递”的理解，以以下代码为例：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">changeStringBuffer</span><span class="hljs-params">(StringBuffer ss1,StringBuffer ss2)</span></span>&#123;<br>        ss1.append(<span class="hljs-string">&quot;World&quot;</span>);<br>        ss2 = ss1;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        Integer a = <span class="hljs-number">1</span>;<br>        Integer b = a;<br>        b ++;<br>        System.out.println(a);<br>        System.out.println(b);<br>        StringBuffer s1 = <span class="hljs-keyword">new</span> StringBuffer(<span class="hljs-string">&quot;Hello&quot;</span>);<br>        StringBuffer s2 = <span class="hljs-keyword">new</span> StringBuffer(<span class="hljs-string">&quot;Hello&quot;</span>);<br>        <span class="hljs-comment">//把s2的地址传给了ss2，但是s2的值仍为Hello</span><br>        changeStringBuffer(s1,s2);<br>        System.out.println(s1);<br>        System.out.println(s2);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果为：<br><img src="/2022/01/10/java-audition-6/3.jpg" srcset="/img/loading.gif" lazyload><br>为了便于理解，函数调用的处理过程见下图所示：<br><img src="/2022/01/10/java-audition-6/4.jpg" srcset="/img/loading.gif" lazyload><br>从上图可以看出，在传递参数时相当于传递了两个地址，在调用ss1.append(“World”)时，修改了这个地址所指向字符串的值，而在调用ss2 = ss1时，相当于修改了函数changeStringBuffer内部的局部变量ss2，与ss1没有关系。</p>
+</blockquote>
+<hr>
+<h3 id="4-4、数据类型转换"><a href="#4-4、数据类型转换" class="headerlink" title="4.4、数据类型转换"></a>4.4、数据类型转换</h3><blockquote>
+<p>Java中，当参与运算的两个变量的数据类型不同时，就需要进行隐式的数据类型转换，转换规则为：从低精度向高精度转换，即优先级满足：byte&lt;short&lt;char&lt;int&lt;long&lt;float&lt;double。类型转换可以分为以下两种：</p>
+</blockquote>
+<ul>
+<li>类型自动转换：低级数据类型可以自动转换为高级数据类型。如下表所示：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">操作数1的类型</th>
+<th align="center">操作数2的类型</th>
+<th align="center">转换后的类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">long</td>
+<td align="center">byte short char int</td>
+<td align="center">long</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">byte short chat</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">byte short int char long</td>
+<td align="center">float</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">byte short int char long float</td>
+<td align="center">double</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>当类型自动转换时需要注意：<br>(1) char类型的数据转换为高级类型，会转换成对应的ASCII码；<br>(2) byte、char、short类型的数据在参与运算时会自动转换为int类型，但当使用个“+=”运算时不会产生类型转换；<br>(3)基本数据类型与boolean类型是不能相互转换的。</p>
+</blockquote>
+<ul>
+<li>强制类型转换：当需要从高级数据类型转换为低级数据类型时，需要进行强制类型转换。如下表所示：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">源操作数的类型</th>
+<th align="center">转换后操作数的类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">byte</td>
+<td align="center">char</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">byte char</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">byte char</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">byte char short</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">byte char short int</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">byte char short int long</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">byte char short int long float</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>需要注意的是，强制类型转换可能会损失精度。<br>byte、short和char类型在运算时会强制转换为int类型再进行计算，如果需要得到short类型的结果，就必须显式地把运算结果转换为short类型，例如：<code>short s1 = 1;s1=(short)(s1+1)</code>,否则会编译错误；还有一种情况，<code>short s1=1;s1+=1</code>就可以编译通过。</p>
+</blockquote>
+<hr>
 
             </div>
             <hr>
@@ -382,6 +472,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/01/12/java-audition-7/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java面试笔试之基础知识-7</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
