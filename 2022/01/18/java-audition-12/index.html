@@ -16,18 +16,22 @@
   <meta name="author" content="董浩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java面试笔试之基础知识-127、输入输出流（下）7.4、Java NIO7.5、Java序列化7.6、System.out.println()注意事项">
+    <meta name="description" content="Java面试笔试之基础知识-127、输入输出流（下）7.4、Java NIO NIO（Nonblocking IO）：非阻塞IO。J2SE 1.4中引入，为了解决阻塞导致的大量线程上下文切换引起的程序运行效率低下问题。NIO通过Selector、Channel和Buffer来实现非阻塞IO操作，实现原理如下图：其中，Channel可以看作一个双向的非阻塞通道，两边都可以进行数据读写操作；而Sele">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java面试笔试之基础知识-12">
 <meta property="og:url" content="http://dhlovewsm.github.io/2022/01/18/java-audition-12/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="Java面试笔试之基础知识-127、输入输出流（下）7.4、Java NIO7.5、Java序列化7.6、System.out.println()注意事项">
+<meta property="og:description" content="Java面试笔试之基础知识-127、输入输出流（下）7.4、Java NIO NIO（Nonblocking IO）：非阻塞IO。J2SE 1.4中引入，为了解决阻塞导致的大量线程上下文切换引起的程序运行效率低下问题。NIO通过Selector、Channel和Buffer来实现非阻塞IO操作，实现原理如下图：其中，Channel可以看作一个双向的非阻塞通道，两边都可以进行数据读写操作；而Sele">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/18/java-audition-12/1.jpg">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/18/java-audition-12/2.jpg">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/18/java-audition-12/3.jpg">
 <meta property="article:published_time" content="2022-01-18T03:02:49.000Z">
-<meta property="article:modified_time" content="2022-01-18T03:04:56.180Z">
+<meta property="article:modified_time" content="2022-01-20T11:30:55.106Z">
 <meta property="article:author" content="董浩">
 <meta property="article:tag" content="Java面试笔试">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://dhlovewsm.github.io/2022/01/18/java-audition-12/1.jpg">
   
   
   <title>Java面试笔试之基础知识-12 - </title>
@@ -197,7 +201,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      76 字
+      2.8k 字
     </span>
   
 
@@ -206,7 +210,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      24 分钟
     </span>
   
 
@@ -238,7 +242,35 @@
             <h1 style="display: none">Java面试笔试之基础知识-12</h1>
             
             <div class="markdown-body">
-              <h1 id="Java面试笔试之基础知识-12"><a href="#Java面试笔试之基础知识-12" class="headerlink" title="Java面试笔试之基础知识-12"></a>Java面试笔试之基础知识-12</h1><h2 id="7、输入输出流（下）"><a href="#7、输入输出流（下）" class="headerlink" title="7、输入输出流（下）"></a>7、输入输出流（下）</h2><h3 id="7-4、Java-NIO"><a href="#7-4、Java-NIO" class="headerlink" title="7.4、Java NIO"></a>7.4、Java NIO</h3><h3 id="7-5、Java序列化"><a href="#7-5、Java序列化" class="headerlink" title="7.5、Java序列化"></a>7.5、Java序列化</h3><h3 id="7-6、System-out-println-注意事项"><a href="#7-6、System-out-println-注意事项" class="headerlink" title="7.6、System.out.println()注意事项"></a>7.6、System.out.println()注意事项</h3>
+              <h1 id="Java面试笔试之基础知识-12"><a href="#Java面试笔试之基础知识-12" class="headerlink" title="Java面试笔试之基础知识-12"></a>Java面试笔试之基础知识-12</h1><h2 id="7、输入输出流（下）"><a href="#7、输入输出流（下）" class="headerlink" title="7、输入输出流（下）"></a>7、输入输出流（下）</h2><h3 id="7-4、Java-NIO"><a href="#7-4、Java-NIO" class="headerlink" title="7.4、Java NIO"></a>7.4、Java NIO</h3><blockquote>
+<p>NIO（Nonblocking IO）：非阻塞IO。J2SE 1.4中引入，为了解决阻塞导致的大量线程上下文切换引起的程序运行效率低下问题。NIO通过Selector、Channel和Buffer来实现非阻塞IO操作，实现原理如下图：<br><img src="/2022/01/18/java-audition-12/1.jpg" srcset="/img/loading.gif" lazyload><br>其中，Channel可以看作一个双向的非阻塞通道，两边都可以进行数据读写操作；<br>而Selector类似一个观察者，使用一个线程来管理多个通道（采用复用与解复用：即合流与分流方式），内部实现原理：对所有注册的Channel进行轮询访问，一旦轮询到一个Channel，通过Selector-Key通知开发人员对该Channel进行读写。<br>Buffer用来保存Channel的读写数据。<br>由此可见，在处理大量并发请求时，使用NIO比使用传统Socket效率高很多。</p>
+</blockquote>
+<h3 id="7-5、Java序列化"><a href="#7-5、Java序列化" class="headerlink" title="7.5、Java序列化"></a>7.5、Java序列化</h3><blockquote>
+<p>Java提供了两种对象持久化的方式：序列化和外部序列化。</p>
+</blockquote>
+<ul>
+<li>序列化：将对象以一连串的字节描述的过程，用于解决在对对象进行读写操作时引发的问题。序列化可以将对象的状态写在流里进行网络传输、保存文件、数据库等系统里，并在需要的时候把流读取出来重新构造一个相同的对象。实现序列化必须实现Serializable接口。序列化主要特点为：<br>①如果一个类能被序列化，那么它的子类也能被序列化；<br>②被static和transient修饰的数据成员不能被实例化。<blockquote>
+<p>示例代码如下：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">People</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Serializable</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">People</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">this</span>.name = <span class="hljs-string">&quot;lili&quot;</span>;<br>        <span class="hljs-keyword">this</span>.age = <span class="hljs-number">20</span>;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAge</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> age;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> age)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.age = age;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> name;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.name = name;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        People people = <span class="hljs-keyword">new</span> People();<br>        ObjectOutputStream oos = <span class="hljs-keyword">null</span>;<br>        ObjectInputStream ois = <span class="hljs-keyword">null</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            FileOutputStream fos = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;people.out&quot;</span>);<br>            oos = <span class="hljs-keyword">new</span> ObjectOutputStream(fos);<br>            oos.writeObject(people);<br>            oos.close();<br>        &#125;<span class="hljs-keyword">catch</span> (Exception e)&#123;<br>            e.printStackTrace();<br>        &#125;<br>        People people1;<br>        <span class="hljs-keyword">try</span> &#123;<br>            FileInputStream fis = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;people.out&quot;</span>);<br>            ois = <span class="hljs-keyword">new</span> ObjectInputStream(fis);<br>            people1 = (People) ois.readObject();<br>            System.out.println(<span class="hljs-string">&quot;name:&quot;</span>+people1.getName());<br>            System.out.println(<span class="hljs-string">&quot;age:&quot;</span>+people1.getAge());<br>            ois.close();<br>        &#125;<span class="hljs-keyword">catch</span> (Exception e)&#123;<br>            e.printStackTrace();<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果为：<br><img src="/2022/01/18/java-audition-12/2.jpg" srcset="/img/loading.gif" lazyload><br>需要注意的是：使用序列化会影响系统性能，除以下情况外，尽可能不要使用序列化。<br>①需要通过网络来发送对象或对象的状态需要被持久化到数据库或文件中；<br>②序列化能实现深复制，即可以复制引用的对象。<br>与序列化相对的是反序列化。即将字节流转为对象。序列化与反序列化通过serialVersionID来判定类的兼容性，尽可能显式声明它，有以下优点：<br>①提高程序的运行效率；<br>②提高程序不同平台上的兼容性；<br>③增强程序各个版本的可兼容性。</p>
+</blockquote>
+</li>
+<li>外部序列化：实现接口为Externalizable，接口中的读写方法必须由开发人员实现，该方法编写程序难度更大，但是灵活性更高。该接口如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Externalizable</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Serializable</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">readExternal</span><span class="hljs-params">(ObjectInput in)</span></span>;?<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">writeExternal</span><span class="hljs-params">(ObjectOutput out)</span></span>;?<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>当需要在类中实现部分属性序列化时，要么使用transient修饰不被序列化的属性，要么使用外部序列化方式，开发人员自己根据需求控制。</p>
+</blockquote>
+<h3 id="7-6、System-out-println-注意事项"><a href="#7-6、System-out-println-注意事项" class="headerlink" title="7.6、System.out.println()注意事项"></a>7.6、System.out.println()注意事项</h3><blockquote>
+<p>该方法用来实现控制台的输出，默认接收作为一个字符串类型的变量作为参数，也可以传递任意能够转换为String类型的变量作为参数。<br>需要注意的是，当传递的参数是一个对象时，会调用该对象的toString()方法进行控制台输出。示例代码如下；</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">People</span></span>&#123;<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">People</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">this</span>.name = <span class="hljs-string">&quot;lili&quot;</span>;<br>        <span class="hljs-keyword">this</span>.age = <span class="hljs-number">20</span>;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;name:&quot;</span>+<span class="hljs-keyword">this</span>.name+<span class="hljs-string">&quot; age:&quot;</span>+<span class="hljs-keyword">this</span>.age;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        System.out.println(<span class="hljs-keyword">new</span> People());<br>        System.out.println(<span class="hljs-number">1</span>+<span class="hljs-number">2</span>+<span class="hljs-string">&quot; &quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot; &quot;</span>+<span class="hljs-number">1</span>+<span class="hljs-number">2</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果为：<br><img src="/2022/01/18/java-audition-12/3.jpg" srcset="/img/loading.gif" lazyload><br>可以看出，使用控制台输出时，对象会默认调用它的toString()方法；同时，当空字符串和数字同时出现时，输出结果类型取决去加号之前的那个类型。</p>
+</blockquote>
+</li>
+</ul>
+
             </div>
             <hr>
             <div>
@@ -271,6 +303,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/01/20/java-audition-13/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java面试笔试之基础知识-13</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
