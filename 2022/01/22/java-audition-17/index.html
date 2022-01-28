@@ -25,8 +25,11 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://dhlovewsm.github.io/2022/01/22/java-audition-17/1.jpg">
 <meta property="og:image" content="http://dhlovewsm.github.io/2022/01/22/java-audition-17/2.jpg">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/22/java-audition-17/3.jpg">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/22/java-audition-17/4.jpg">
+<meta property="og:image" content="http://dhlovewsm.github.io/2022/01/22/java-audition-17/5.jpg">
 <meta property="article:published_time" content="2022-01-22T04:18:20.000Z">
-<meta property="article:modified_time" content="2022-01-22T12:56:06.733Z">
+<meta property="article:modified_time" content="2022-01-25T13:56:51.293Z">
 <meta property="article:author" content="董浩">
 <meta property="article:tag" content="Java面试笔试">
 <meta name="twitter:card" content="summary_large_image">
@@ -200,7 +203,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.6k 字
+      5.1k 字
     </span>
   
 
@@ -209,7 +212,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      22 分钟
+      43 分钟
     </span>
   
 
@@ -278,8 +281,26 @@
 </blockquote>
 <hr>
 <h3 id="10-4、run-方法和start-方法的区别"><a href="#10-4、run-方法和start-方法的区别" class="headerlink" title="10.4、run()方法和start()方法的区别"></a>10.4、run()方法和start()方法的区别</h3><blockquote>
-<p>通常，系统调用多线程类的start()方法来启动一个线程，也只有通过调用线程类的start()方法才能真正达到多线程的目的。</p>
+<p>通常，系统调用多线程类的start()方法来启动一个线程，也只有通过调用线程类的start()方法才能真正达到多线程的目的。start()方法能够异步的调用run()方法，但是直接调用的话，却是同步的，无法达到多线程的目的。如下例所示：</p>
 </blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;ThreadDemo: begin&quot;</span>);<br>        <span class="hljs-keyword">try</span> &#123;<br>            Thread.sleep(<span class="hljs-number">1000</span>);<br>        &#125;<span class="hljs-keyword">catch</span> (InterruptedException e)&#123;<br>            e.printStackTrace();<br>        &#125;<br>        System.out.println(<span class="hljs-string">&quot;ThreadDemo: end&quot;</span>);<br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test1</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;test1:begin&quot;</span>);<br>        Thread t1 = <span class="hljs-keyword">new</span> ThreadDemo();<br>        t1.start();<br>        System.out.println(<span class="hljs-string">&quot;test1: end&quot;</span>);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test2</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;test2: begin&quot;</span>);<br>        Thread t1 = <span class="hljs-keyword">new</span> ThreadDemo();<br>        t1.run();<br>        System.out.println(<span class="hljs-string">&quot;test2: end&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        test1();<br>        <span class="hljs-keyword">try</span> &#123;<br>            Thread.sleep(<span class="hljs-number">5000</span>);<br>        &#125;<span class="hljs-keyword">catch</span> (InterruptedException e)&#123;<br>            e.printStackTrace();<br>        &#125;<br>        System.out.println();<br>        test2();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果为：<br><img src="/2022/01/22/java-audition-17/3.jpg" srcset="/img/loading.gif" lazyload><br>从test1运行结果可以看出，线程t1实在test1方法结束后才执行的，因此在test1中调用start()方法是异步的，即main线程与t1线程是异步执行的；从test2运行结果可以看出，调用t1.run()方法是同步的，因为<code>System.out.println(&quot;test2: end&quot;)</code>只有等t1.run()调用结束后才能执行。</p>
+</blockquote>
+<hr>
+<h3 id="10-5、多线程同步的实现方法"><a href="#10-5、多线程同步的实现方法" class="headerlink" title="10.5、多线程同步的实现方法"></a>10.5、多线程同步的实现方法</h3><blockquote>
+<p>使用多线程访问同一个资源时，资源安全无法得到保证，因此引入了同步机制。具体而言，Java提供了3种方式来实现同步机制：</p>
+</blockquote>
+<ul>
+<li>synchronized关键字。有2种用法：<br>①synchronized方法。可以保证方法在同一时刻只能被一个线程访问，但是当方法体规模非常大时，就会大大影响程序执行系效率。示例如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">function</span><span class="hljs-params">()</span></span>;<br></code></pre></td></tr></table></figure>
+②synchronized块。可以把任意的代码块声明为synchronized，也可以指定上锁的对象，灵活性非常高。示例如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">synchronized</span>(syncObject)&#123;<br>    <span class="hljs-comment">//访问syncObject的代码</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>wait()方法和notify()方法。notify()方法仅唤醒一个线程，并允许它获得锁，notifyAll()方法唤醒所有等待这个对象的线程并允许它们获得锁。</li>
+<li>Lock。JDK5新增了Lock接口和它的实现类ReentrantLock（重入锁），提供了如下一些方法实现多线程同步：<br>①lock()。以阻塞的方式获取锁，即获取到锁立即返回，如果别的对象持有锁，当前线程等待，知道获取到锁后返回。<br>②tryLock()。以非阻塞的方式获取锁，即如果获取到锁立即返回true，否则立即返回false。<br>③tryLock(long timeout，TimeUnit unit)。如果获取到了锁，立即返回true，否则会等待参数给定的时间单元，在等待过程中如果获取到锁，就返回true，如果等待超时返回false。<br>④lockInterruptibly()。如果获取到锁，立即返回，否则当前线程处于休眠状态直到获取到锁或者被其他线程中断（会收到InterruptedException异常）。与lock()方法的最大区别就是lock()获取不到锁会一直处于阻塞状态。示例如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.concurrent.locks.Lock;<br><span class="hljs-keyword">import</span> java.util.concurrent.locks.ReentrantLock;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException</span>&#123;<br>        <span class="hljs-keyword">final</span> Lock lock = <span class="hljs-keyword">new</span> ReentrantLock();<br>        lock.lock();<br>        Thread t1 = <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;<br>                <span class="hljs-keyword">try</span> &#123;<br>                    lock.lockInterruptibly();<br>                    <span class="hljs-comment">//lock.lock();编译器错误</span><br>                &#125;<span class="hljs-keyword">catch</span> (InterruptedException e)&#123;<br>                    System.out.println(<span class="hljs-string">&quot;interrupted&quot;</span>);<br>                &#125;<br>            &#125;<br>        &#125;);<br>        t1.start();<br>        t1.interrupt();<br>        Thread.sleep(<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>运行结果为：<br><img src="/2022/01/22/java-audition-17/4.jpg" srcset="/img/loading.gif" lazyload><br>如果把<code>lock.lockIntertuptibly()</code>替换为<code>lock.lock()</code>，编译器将会因为lock()方法不会抛出异常而提示错误。<br><img src="/2022/01/22/java-audition-17/5.jpg" srcset="/img/loading.gif" lazyload></p>
+</blockquote>
+</li>
+</ul>
 
             </div>
             <hr>
@@ -313,6 +334,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/01/25/java-audition-18/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java面试笔试之基础知识-18</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
